@@ -20,9 +20,6 @@
 # the database is only committed for production
 database/sqlite.db
 
-# fast-activation-script for the env
-activate.ps1
-
 # jupyter
 notebooks/.ipynb_checkpoints/
 
@@ -33,3 +30,6 @@ poetry.lock
 # precompiled
 __pycache__/
 *.py[cod]
+
+# frontend
+frontend/node_modules
