@@ -8,8 +8,10 @@
     "axios": "^0.19.2",
     "vue": "^2.6.11",
     "vue-hot-reload-api": "^2.3.4",
+    "vuetify": "^2.2.25"
   },
   "devDependencies": {
+    "@vue/cli-service": "~4.3.0",
     "@vue/component-compiler-utils": "^3.1.2",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
@@ -17,7 +19,8 @@
     "pug": "^2.0.4",
     "sass": "^1.26.5",
     "typescript": "^3.8.3",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vue-cli-plugin-vuetify": "^2.0.5"
   },
   "scripts": {
     "serve": "parcel public/index.html --public-url /",

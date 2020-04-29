@@ -33,6 +33,6 @@ __pycache__/
 *.py[cod]
 
 # frontend
-frontend/node_modules
+**/node_modules
 frontend/.cache
 frontend/dist
