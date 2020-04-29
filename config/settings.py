@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import environ
 
-# import project-specific settings
+# import project-specific settings (TITLE etc)
 from .project import * #noqa
 
 # Quick-start development settings - unsuitable for production
@@ -65,6 +65,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     "crispy_forms",
     "django_extensions",
+    "compressor",
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -218,9 +219,9 @@ USE_TZ = True
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-root
 STATIC_ROOT = str(ROOT_DIR("staticfiles"))
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-STATIC_URL = '/static/'
+STATIC_URL = '/assets/'
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = [str(ROOT_DIR.path("static"))]
+STATICFILES_DIRS = [str(ROOT_DIR.path("assets/django")), str(ROOT_DIR.path("assets/vue"))]
 
 # jupyter-notebook
 
@@ -228,7 +229,14 @@ STATICFILES_DIRS = [str(ROOT_DIR.path("static"))]
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    
+    # compressor for parceljs
+    'compressor.finders.CompressorFinder',
 ]
+
+# compressor
+COMPRESS_ENABLED = not DEBUG
+COMPRESS_OFFLINE = not DEBUG
 
 IPYTHON_ARGUMENTS = ["--debug", "--settings=config.settings"]
 
